@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Страница с постами
+{% endblock title %}
+
+{% block content %}
+
+<h1>Все посты</h1>
+
+{% for post in content.posts %}
+<div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-0">{{ post.title }}</h3><br>
+<!--          <div class="mb-1 text-body-secondary">Nov 12</div>-->
+          <p class="card-text mb-auto">{{ post.text }}</p>
+            <br>
+          <a href="{{ url_for('post_detail', post_id=post.id) }}" class="icon-link gap-1 icon-link-hover stretched-link">Подробно</a>
+
+        </div>
+
+
+      </div>
+{% endfor %}
+{% endblock content %}

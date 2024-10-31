@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+подробно
+{% endblock title %}
+
+
+{% block content %}
+<h1>Очень подробно о посте {{post.id}}</h1>
+{{ post.title }}<br>
+ <a href="/posts">Back to posts</a>
+{% endblock content %}

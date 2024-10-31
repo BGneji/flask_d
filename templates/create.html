@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Создание постов
+{% endblock title %}
+
+{% block content %}
+<h1>Создание постов </h1>
+{% for cat,  msg in get_flashed_messages(True) %}
+    {% if cat == 'danger' %}
+<div class="alert alert-danger" role="alert">
+  {{msg}}
+</div>
+    {% else %}
+<div class="alert alert-success" role="alert">
+  {{msg}}
+</div>
+    {% endif %}
+{% endfor %}
+<form method="POST" class="form-control">
+
+    <input type="text" name="title" class="form-control" placeholder="Введите заголовок поста"><br>
+    <input type="text" name="text" class="form-control" placeholder="Введите текс поста"><br>
+    <button class="btn btn-success" type="submit">Добавить</button>
+</form>
+{% endblock content %}
